@@ -401,7 +401,7 @@
 
 // ------------------------------------------------
 
-// Class 4 - Date
+// Class 4 - Math
 
 // console.log(Math);
 // console.log(Math.PI);

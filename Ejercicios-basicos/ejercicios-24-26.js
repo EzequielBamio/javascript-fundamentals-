@@ -2,14 +2,19 @@ console.log('--- Ejercicio 24 ---');
 //24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
 
 const orderNumbers = ( numbers = [] ) => {
+    
     if( !numbers.length ) { return console.warn('You did not enter any numbers') }
+    if( !(numbers instanceof Array) ) { return console.warn('You did not enter any Array') }
 
-    const numbersOrdering =  { asc: [], desc: [] } 
-    numbers.sort(( a, b ) => a - b);
+    for(let num of numbers) {
+        if( typeof num !== 'number' ) { return console.warn(`The value "${ num } is not a number"`) }
+    }
 
-    numbersOrdering.asc = numbers.slice(0);
-    numbersOrdering.desc = numbers.slice(0).reverse();
-    console.log(numbersOrdering);
+    return console.log({
+        numbers,
+        asc: numbers.map(num => num).sort((a, b) => a - b),
+        desc: numbers.map(num => num).sort((a, b) => a - b).reverse()
+     });
 
 } 
 orderNumbers();
@@ -23,13 +28,18 @@ console.log('--- Ejercicio 25 ---');
 
 const removeDuplicates = ( elements = [] ) => { 
     if( !elements.length ) { return console.warn('You did not enter any elements') }
+    if( !(elements instanceof Array) ) { return console.warn('You did not enter any Array') }
+    if( elements.length < 2) { return console.warn('The array must have at least 2 elements') }
 
-    for(let element of elements) {
-        elements = elements.filter( e => e !== element)
-        elements.push(element);
-    } 
 
-    console.log(elements);
+    return console.log({
+        original: elements,
+        noDuplication: elements.filter( ( value, index, self ) => self.indexOf( value ) === index )
+     });
+     //return console.log({
+        //original: elements,
+        //noDuplication: [... new Set(arr)]
+     //});
 
 } 
 removeDuplicates(["x", 10, "x", 2, "10", 10, true, true]);
@@ -39,9 +49,13 @@ removeDuplicates(["x", 10, "x", 2, "10", 10, true, true]);
 console.log('--- Ejercicio 26 ---');
 //26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
 
-const average = ( numbers ) => {
+const average = ( numbers = [] ) => {
     if( !numbers.length ) { return console.warn('You did not enter any numbers') }
+    if( !(numbers instanceof Array) ) { return console.warn('You did not enter any Array') }
 
+    for(let num of numbers) {
+        if( typeof num !== 'number' ) { return console.warn(`The value "${ num } is not a number"`) }
+    }
     let acumNumber = 0;
     numbers.forEach( number => {
         acumNumber += number;

@@ -4,12 +4,15 @@ console.log('--- Ejercicio 21 ---');
 const arrPow = ( numbers = [] ) => {
 
     if( !numbers.length ) { return console.warn('You did not enter any numbers') }
+    if( !(numbers instanceof Array) ) { return console.warn('You did not enter any Array') }
 
-    console.log(`Numbers: ${ numbers }`);
-    for( let i = 0; i < numbers.length; i++ ) {
-        numbers[i] = Math.pow(numbers[i], 2);
+    for(let num of numbers) {
+        if( typeof num !== 'number' ) { return console.warn(`The value "${ num } is not a number"`) }
     }
-    return console.log(`Squared numbers: ${ numbers }`);
+
+    const auxNumbers = numbers.map( num => num*num );
+
+    return console.log(`${ numbers } - Squared numbers: ${ auxNumbers }`);
 }
  
 arrPow([1, 4, 5]);
@@ -21,10 +24,16 @@ arrPow();
 console.log('--- Ejercicio 22 ---');
 //22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
 
-const arrNumberMaxMin = ( numbers = [] ) =>
-    ( !numbers.length ) 
-    ? console.warn('You did not enter any numbers')
-    : console.log( `Min: ${ Math.min(...numbers) } - Max: ${  Math.max(...numbers) }` )
+const arrNumberMaxMin = ( numbers = [] ) => {
+    if( !numbers.length ) { return console.warn('You did not enter any numbers') }
+    if( !(numbers instanceof Array) ) { return console.warn('You did not enter any Array') }
+
+    for(let num of numbers) {
+        if( typeof num !== 'number' ) { return console.warn(`The value "${ num } is not a number"`) }
+    }
+
+    return console.log( `Min: ${ Math.min(...numbers) } - Max: ${  Math.max(...numbers) }` )
+}
 
 arrNumberMaxMin();
 arrNumberMaxMin([]);
@@ -35,17 +44,16 @@ arrNumberMaxMin([1, 4, 5, 99, -60]);
 
 const numbersParity = ( numbers = [] ) => {
     if( !numbers.length ) { return console.warn('You did not enter any numbers') }
+    if( !(numbers instanceof Array) ) { return console.warn('You did not enter any Array') }
 
-    const oParity = { pair: [], odd: [] };
-
-    for(let i = 0; i < numbers.length; i++) {
-        if(numbers[i] % 2 === 0) {
-            oParity.pair.push( numbers[i] );
-        }else {
-            oParity.odd.push( numbers[i] );
-        }
+    for(let num of numbers) {
+        if( typeof num !== 'number' ) { return console.warn(`The value "${ num } is not a number"`) }
     }
-    console.log(oParity);
+
+    return console.log( { 
+        pair: numbers.filter( num => num % 2 === 0),
+        odd: numbers.filter( num => num % 2 === 1)
+     });
 }
 
 numbersParity([1,2,3,4,5,6,7,8,9,0]);

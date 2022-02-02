@@ -217,57 +217,107 @@
 //     next = iterador.next();
 // }
 
+//------------------------
+
 // # Generators 
 
-function* iterable () {
-    yield 'Hola';
-    console.log('Hello console');
-    yield 'Hola 2';
-    console.log('Seguimos con más instrucciones de nuestro código');
-    yield 'Hola 3';
-    yield 'Hello 4';
-}
+// function* iterable () {
+//     yield 'Hola';
+//     console.log('Hello console');
+//     yield 'Hola 2';
+//     console.log('Seguimos con más instrucciones de nuestro código');
+//     yield 'Hola 3';
+//     yield 'Hello 4';
+// }
 
-let iterador = iterable();
-// console.log(iterador.next());
-// console.log(iterador.next());
-// console.log(iterador.next());
-// console.log(iterador.next());
-// console.log(iterador.next());
+// let iterador = iterable();
+// // console.log(iterador.next());
+// // console.log(iterador.next());
+// // console.log(iterador.next());
+// // console.log(iterador.next());
+// // console.log(iterador.next());
 
-for( let y of iterador ) {
-    console.log(y);
-}
+// for( let y of iterador ) {
+//     console.log(y);
+// }
 
-const arr = [...iterable()];
-console.log(arr);
+// const arr = [...iterable()];
+// console.log(arr);
 
-function cuadrado( value ) {
-    setTimeout( () => {
-        // console.log({value, resultado: value*value});
-    }, Math.random * 1000);
+// function cuadrado( value ) {
+//     setTimeout( () => {
+//         // console.log({value, resultado: value*value});
+//     }, Math.random * 1000);
 
-    return {
-        value,
-        resultado: value*value};
-}
+//     return {
+//         value,
+//         resultado: value*value};
+// }
 
-function* generador() {
-    console.log('Inicia Generator');
-    yield cuadrado(0);
-    yield cuadrado(1);
-    yield cuadrado(2);
-    yield cuadrado(3);
-    yield cuadrado(4);
-    yield cuadrado(5);
-    console.log('Fin Generator');
-}
+// function* generador() {
+//     console.log('Inicia Generator');
+//     yield cuadrado(0);
+//     yield cuadrado(1);
+//     yield cuadrado(2);
+//     yield cuadrado(3);
+//     yield cuadrado(4);
+//     yield cuadrado(5);
+//     console.log('Fin Generator');
+// }
 
-let gen = generador();
+// let gen = generador();
 
-for( let y of gen ) {
-    console.log(y);
-}
+// for( let y of gen ) {
+//     console.log(y);
+// }
+
+// # Proxies
+
+// const persona = {
+//     nombre: '',
+//     apellido: '',
+//     edad: 0
+// };
+
+// const manejador = {
+//     set( obj, prop, valor ) {
+//         if(Object.keys(obj).indexOf(prop) === -1)
+//         { return console.error(`La propiedad "${prop}" no existe en el objeto persona`)};
+
+//         if(
+//             (prop === 'nombre' || prop === 'apellido') &&
+//             !(/^[A-Za-zÑñ\s]+$/g.test(valor))
+//         ) { return console.error(`La propiedad "${prop}" solo acepta letras y espacios en blanco`)};
+
+//         obj[prop] = valor;
+//     }
+// }
+
+// const eze = new Proxy(persona, manejador);
+// eze.nombre = 'Ezequiel2';
+// eze.apellido = 'Bamio';
+// eze.edad = 20;
+// eze.instagram = '@bamioezequiel';
+// console.log(eze);
 
 
+//------------------------
+
+// # Propiedades dinamicas de los objetos
+
+// let aleatorio = Math.round(Math.random() * 100 + 5);
+
+// const objUsuarios = {
+//     propiedad: 'Valor',
+//     [`id_${ aleatorio }`]: 'Valor Aleatorio'
+// };
+// console.log(objUsuarios);
+
+// const usuarios = ['Ezequiel', 'Candela', 'Jon', 'Pedro', 'Rocio'];
+
+// usuarios.forEach( (usuario, index) => objUsuarios[`id_${index}`] = usuario  )
+
+// console.log(objUsuarios);
+
+//------------------------
 

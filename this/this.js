@@ -108,13 +108,6 @@ const otraPersona = {
 
 otraPersona.saludar();
 
-
-
-
-
-
-
-
 //------------------------
 
 

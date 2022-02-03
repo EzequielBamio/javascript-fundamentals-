@@ -1,0 +1,11 @@
+{
+    "cadena": "eze",
+    "numero": "20",
+    "booleano": "true",
+    "arreglo": ["futbol", "programar", "actividad fisica"],
+    "objeto": {
+        "instagram": "@bamioezequiel",
+        "email": "bamioezequielok@gmail.com"
+    },
+    "nulo": "null"
+}

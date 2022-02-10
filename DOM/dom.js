@@ -309,3 +309,121 @@
 // // $cards.insertBefore($newCard, $cards.firstChild);
 
 // document.body.appendChild($cloneCards);
+
+// console.log('******* Modificando Elementos (Cool Style) *******');
+
+/*
+.insertAdjacent
+ .insertAbjacentElement(position, elemento)
+ .insertAbjacentHTML(position, html)
+ .insertAbjacentText(position, text)
+
+Posiciones:
+ beforebegin(hermano anterior)
+ afterbegin(primer hijo)
+ beforeend(ultimo hijo)
+ afterend(hermano siguiente)
+*/
+
+// const $cards = document.querySelector('.cards'),
+//       $newCard = document.createElement('figure'),
+//       $cloneCards = $cards.cloneNode(true);
+
+// let $contenCard = `
+//     <img src="https://placeimg.com/200/200/any" alt="Any">
+//     <figcaption></figcaption>
+// `; 
+
+// $newCard.classList.add('card');
+
+// $newCard.insertAdjacentHTML('beforeend', $contenCard);
+// $newCard.querySelector('figcaption').insertAdjacentText('afterbegin', 'Any');
+// $cards.insertAdjacentElement('afterbegin', $newCard);
+
+// // $cards.prepend($newCard);
+// // $cards.append($newCard);
+// // $cards.before($newCard);
+// // $cards.after($newCard);
+
+// console.log('******* Manejadores de Eventos *******');
+
+// function holaMundo() {
+//     alert('Hello World');
+//     console.log(event);
+// }
+
+// function saludar(nombre = 'Desconocido') {
+//     alert(`Hola ${nombre}`);
+//     console.log(event);
+// }
+
+// const $eventoSemantico = document.getElementById('evento-semantico')
+// $eventoMultiple = document.getElementById('evento-multiple'),
+// $eventoRemover = document.getElementById('evento-remover');
+
+// $eventoSemantico.onclick = holaMundo;
+// $eventoSemantico.onclick = function (e) {
+//     alert('Hola Mundo Manejador de Eventos Semantico');
+//     console.log(e);
+//     console.log(event);
+// };
+
+// $eventoMultiple.addEventListener('click', holaMundo);
+// $eventoMultiple.addEventListener('click', (e) => {
+//     alert('Hola Mundo Manejador de Eventos Multiple');
+//     console.log(e);
+//     console.log(e.type);
+//     console.log(e.target);
+//     console.log(event);
+// });
+
+// console.log('******* Eventos con parametros y remover eventos *******');
+
+// // $eventoMultiple.addEventListener('click', saludar);
+// $eventoMultiple.addEventListener('click', () => {
+//     saludar();
+//     saludar('Eze');
+// });
+
+// const removerDobleClick = (e) => {
+//     alert(`Removiendo el evento de tipo ${e.type}`);
+//     console.log(e);
+
+//     $eventoRemover.removeEventListener('dblclick', removerDobleClick);
+//     $eventoRemover.disabled = true;
+// }
+
+// $eventoRemover.addEventListener('dblclick', removerDobleClick);
+
+console.log('******* Flujo de eventos (Burbuja y captura) *******');
+
+const $divsEventos = document.querySelectorAll('.eventos-flujo div'),
+ $linkEventos = document.querySelector('.eventos-flujo a');
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+    e.stopPropagation();
+} 
+
+console.log($divsEventos);
+
+$divsEventos.forEach( (div) => {
+    //Fase de burbuja
+    div.addEventListener('click', flujoEventos);
+    // div.addEventListener('click', flujoEventos, false);
+
+    //Fase de captura
+    // div.addEventListener('click', flujoEventos, true);
+    // div.addEventListener('click', flujoEventos, {
+    //     capture: true,
+    //     once: true
+    // });
+});
+
+console.log('******* stopPropogación & preventDefault *******');
+
+$linkEventos.addEventListener('click', (e) => {
+    alert('Hello World');
+    e.preventDefault();
+    e.stopPropagation();
+});

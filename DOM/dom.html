@@ -42,6 +42,24 @@
         .speia {
             filter: sepia(1);
         }
+
+        .eventos-flujo div {
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .uno {
+            background-color: yellow;
+        }
+
+        .dos {
+            background-color: gold;
+        }
+
+        .tres {
+            background-color: lightyellow;
+        }
     </style>
 
 </head>
@@ -112,6 +130,31 @@
             <figcaption></figcaption>
         </figure>
     </template>
+
+    <h3>Eventos en JavaScript</h3>
+    <h4>Manejadores de Eventos</h4>
+
+    <button onclick="holaMundo()">Evento con atributo HTML</button>
+    <br><br>
+    <button id="evento-semantico">Evento con manejador semantico</button>
+    <br><br>
+    <button id="evento-multiple">Evento con manejador multiple</button>
+    <br><br>
+    <button id="evento-remover">Removiendo eventos con manejadores multiples</button>
+    <br><br>
+    <h4>Flujo de Eventos</h4>
+    <section class="eventos-flujo">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://google.com" target="_blank" rel="noopener">Google.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <script src="./dom.js"></script>

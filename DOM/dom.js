@@ -395,35 +395,122 @@ Posiciones:
 
 // $eventoRemover.addEventListener('dblclick', removerDobleClick);
 
-console.log('******* Flujo de eventos (Burbuja y captura) *******');
+// console.log('******* Flujo de eventos (Burbuja y captura) *******');
 
-const $divsEventos = document.querySelectorAll('.eventos-flujo div'),
- $linkEventos = document.querySelector('.eventos-flujo a');
+// const $divsEventos = document.querySelectorAll('.eventos-flujo div'),
+//  $linkEventos = document.querySelector('.eventos-flujo a');
 
-function flujoEventos(e) {
-    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
-    e.stopPropagation();
-} 
+// function flujoEventos(e) {
+//     console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+//     e.stopPropagation();
+// } 
 
-console.log($divsEventos);
+// console.log($divsEventos);
 
-$divsEventos.forEach( (div) => {
-    //Fase de burbuja
-    div.addEventListener('click', flujoEventos);
-    // div.addEventListener('click', flujoEventos, false);
+// $divsEventos.forEach( (div) => {
+//     //Fase de burbuja
+//     div.addEventListener('click', flujoEventos);
+//     // div.addEventListener('click', flujoEventos, false);
 
-    //Fase de captura
-    // div.addEventListener('click', flujoEventos, true);
-    // div.addEventListener('click', flujoEventos, {
-    //     capture: true,
-    //     once: true
-    // });
+//     //Fase de captura
+//     // div.addEventListener('click', flujoEventos, true);
+//     // div.addEventListener('click', flujoEventos, {
+//     //     capture: true,
+//     //     once: true
+//     // });
+// });
+
+// console.log('******* stopPropogación & preventDefault *******');
+
+// $linkEventos.addEventListener('click', (e) => {
+//     alert('Hello World');
+//     e.preventDefault();
+//     e.stopPropagation();
+// });
+
+// console.log('******* Delegación de Eventos *******');
+
+// function flujoEventos(e) {
+//     console.log(`Hola te saluda ${this}, el click lo origino ${e.target.className}`);
+// } 
+
+// document.addEventListener('click', (e) => {
+//     console.log('Click en', e.target);
+
+//     if( e.target.matches('.eventos-flujo div') ) {
+//         flujoEventos(e);
+//     }
+
+//     if( e.target.matches('.eventos-flujo a') ) {
+//         alert('Hello World');
+//         e.preventDefault();
+//     }
+// });
+
+// console.log('******* Propiedades y Eventos *******');
+
+// window.addEventListener('resize', (e) => {
+//     console.clear();
+//     console.log('******** Evento Risize ********');
+//     console.log(window.innerWidth);
+//     console.log(window.innerHeight);
+//     console.log(window.outerWidth);
+//     console.log(window.outerHeight);
+    
+//     console.log(e);
+// });
+
+// window.addEventListener('scroll', (e) => {
+//     console.clear();
+//     console.log('******** Evento Scroll ********');
+//     console.log(window.scrollY);
+//     console.log(window.scrollX);
+    
+//     console.log(e);
+// });
+
+// window.addEventListener('load', (e) => {
+//     // console.clear();
+//     console.log('******** Evento Load ********');
+//     console.log(window.screenX);
+//     console.log(window.screenY); 
+    
+//     console.log(e);
+// });
+
+// // $(window).load(funcion);
+// // $(document).ready(funcion);
+// // $(document).on('ready', funcion);
+
+// document.addEventListener('DOMContentLoaded', (e) => {
+//     // console.clear();
+//     console.log('******** Evento DOMContentLoaded ********');
+//     console.log(window.screenX);
+//     console.log(window.screenY); 
+    
+//     console.log(e);
+// });
+
+console.log('******* Metodos *******');
+// window.alert('Alerta');
+// window.confirm('Confirmación');
+// window.prompt('Aviso');
+
+const $btnAbrir = document.getElementById('abrir-ventana'),
+      $btnCerrar = document.getElementById('cerrar-ventana'),
+      $btnImprimir = document.getElementById('imprimir-ventana');
+
+let ventana;
+
+$btnAbrir.addEventListener('click', (e) => {
+    ventana = window.open('https://google.com/');
 });
 
-console.log('******* stopPropogación & preventDefault *******');
+$btnCerrar.addEventListener('click', (e) => {
+    // window.close();
+    ventana.close();;
+});
 
-$linkEventos.addEventListener('click', (e) => {
-    alert('Hello World');
-    e.preventDefault();
-    e.stopPropagation();
+$btnImprimir.addEventListener('click', (e) => {
+    window.print();
 });

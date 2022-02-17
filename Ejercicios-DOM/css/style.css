@@ -120,3 +120,20 @@ img {
     color: var(--color-second);
 }
 
+.stage {
+    background-color: var(--color-second);
+    display: flex;
+    min-height: 50vh;
+}
+
+.ball {
+    background-color: var(--color-primary);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.move {
+    transform: translateX(1);
+}

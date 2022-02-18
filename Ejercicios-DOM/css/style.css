@@ -1,6 +1,7 @@
 :root {
     --color-primary: #f7df1e;
     --color-second: #000;
+    --position-ball: 0px;
 }
 
 html {
@@ -121,19 +122,25 @@ img {
 }
 
 .stage {
-    background-color: var(--color-second);
     display: flex;
     min-height: 50vh;
+    background-color: var(--color-second);
 }
 
 .ball {
-    background-color: var(--color-primary);
+    margin: auto;
     width: 4rem;
     height: 4rem;
-    border-radius: 50px;
-    margin: auto;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+
 }
 
-.move {
-    transform: translateX(1);
+.ball-soccer {
+    margin: auto;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.2s ease-in-out;
 }

@@ -144,3 +144,29 @@ img {
     background-color: white;
     transition: transform 0.2s ease-in-out;
 }
+
+.up-btn {
+    position: fixed;
+    z-index: 999;
+    right: 12vh;
+    bottom: 1vw;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.up-btn span {
+    font-size: 2.5rem;
+}
+
+.up-btn:hover {
+    background-color: var(--color-second);
+    color: var(--color-primary);
+}

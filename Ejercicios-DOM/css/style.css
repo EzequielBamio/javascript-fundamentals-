@@ -9,6 +9,7 @@ html {
     font-family: sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
+    
 }
 
 *,
@@ -145,28 +146,66 @@ img {
     transition: transform 0.2s ease-in-out;
 }
 
-.up-btn {
+/* Scoll Top Button */
+
+.scroll-top-btn {
     position: fixed;
+    background-color: var(--color-primary);
+    color: var(--color-second);
     z-index: 999;
-    right: 12vh;
-    bottom: 1vw;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
     width: 4rem;
     height: 4rem;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    border: none;
+    font-size: 2rem;
+    bottom: 1vw;
+    right: calc(4.25rem + 1vw);
+    font-weight: bold;
     cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
-.up-btn span {
-    font-size: 2.5rem;
-}
-
-.up-btn:hover {
+.scroll-top-btn:hover {
     background-color: var(--color-second);
     color: var(--color-primary);
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Dark Theme */
+
+.dark-theme-btn {
+    position: fixed;
+    background-color: var(--color-primary);
+    color: var(--color-second);
+    z-index: 999;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    bottom: 1vh;
+    left: 1vw;
+    line-height: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    visibility: visible;
+}
+
+
+.dark-theme-btn:hover {
+    background-color: var(--color-second);
+    color: var(--color-primary);
+}
+
+.dark-mode {
+    background-color: var(--color-second);
+    color: var(--color-primary); 
 }

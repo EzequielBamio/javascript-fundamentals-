@@ -173,18 +173,6 @@ img {
     color: var(--color-primary);
 }
 
-/* responsive */
-
-.responsive-container,
-.responsive-link {
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s ease;
-}
-
-/* responsive */
-
 .hidden {
     opacity: 0;
     visibility: hidden;
@@ -221,3 +209,4 @@ img {
     background-color: var(--color-second);
     color: var(--color-primary); 
 }
+

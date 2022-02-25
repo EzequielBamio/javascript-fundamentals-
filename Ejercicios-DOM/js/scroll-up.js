@@ -10,7 +10,7 @@ export function scrollUp(btnScroll) {
             $scrollUp.classList.add('hidden');
         }
     });
-  
+    
     document.addEventListener('click', (e) => {
         if(e.target.matches(btnScroll)) {
             window.scrollTo({

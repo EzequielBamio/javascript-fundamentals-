@@ -12,7 +12,10 @@ export function ResponsiveTester(form) {
     });
 
     d.addEventListener('click', (e) => {
-       if(e.target === $form.cerrar){ ventana.close(); }
+        console.log($form.cerrar)
+        console.log(e.target)
+
+       if($form.cerrar !== null && e.target === $form.cerrar) { ventana.close(); }
     });
 
 }

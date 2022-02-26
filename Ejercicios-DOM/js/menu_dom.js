@@ -6,7 +6,8 @@ import { scrollUp } from "./scroll-up.js";
 import { darkTheme } from "./tema_oscuro.js";
 import { resposiveMedia } from "./responsive.js";
 import { ResponsiveTester } from "./responsive_tester.js";
-import { userDeviceInfo } from "./deteccion_dispositivos.js.js";
+import { userDeviceInfo } from "./deteccion_dispositivos.js";
+import { detectionConnection } from "./deteccion_conexion.js";
 
 const d = document;
 
@@ -25,9 +26,10 @@ d.addEventListener('DOMContentLoaded', (e) => {
     userDeviceInfo('user-device');
 });
 
-darkTheme('.dark-theme-btn', 'dark-mode');
-
 d.addEventListener('keydown', (e) => {
     shortcuts( e );
     moveBall( e, '.ball', '.stage', '.ball-soccer' );
 });
+
+darkTheme('.dark-theme-btn', 'dark-mode');
+detectionConnection();

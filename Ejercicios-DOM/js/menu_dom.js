@@ -8,6 +8,7 @@ import { resposiveMedia } from "./responsive.js";
 import { ResponsiveTester } from "./responsive_tester.js";
 import { userDeviceInfo } from "./deteccion_dispositivos.js";
 import { detectionConnection } from "./deteccion_conexion.js";
+import { webCam } from "./deteccion_webcam.js";
 
 const d = document;
 
@@ -24,6 +25,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
     ResponsiveTester('responsive-tester');
 
     userDeviceInfo('user-device');
+
+    webCam('webcam');
 });
 
 d.addEventListener('keydown', (e) => {

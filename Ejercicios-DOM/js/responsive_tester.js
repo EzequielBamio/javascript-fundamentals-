@@ -1,6 +1,6 @@
 const d = document;
 const w = window;
-export function ResponsiveTester(form) {
+export function responsiveTester(form) {
     const $form = d.getElementById(form);
     let ventana;
 
@@ -12,10 +12,12 @@ export function ResponsiveTester(form) {
     });
 
     d.addEventListener('click', (e) => {
-        console.log($form.cerrar)
-        console.log(e.target)
-
-       if($form.cerrar !== null && e.target === $form.cerrar) { ventana.close(); }
+        try {
+            if(e.target === $form.cerrar) { ventana.close(); }
+        }
+        catch(err) {
+            
+        }
     });
 
 }

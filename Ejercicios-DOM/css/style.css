@@ -73,6 +73,7 @@ img {
     background-color: #000000ef;
     position: fixed;
     z-index: 990;
+    overflow-y: auto;
     top: 0;
     bottom: 0;
     left: 0;

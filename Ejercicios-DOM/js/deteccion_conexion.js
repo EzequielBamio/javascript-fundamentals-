@@ -8,7 +8,7 @@ export function detectionConnection() {
         const $div = d.createElement('div');
 
         if(n.onLine) {
-            $div.textContent = 'Conexión Restrablecida';
+            $div.textContent = 'Conexión Restablecida';
             $div.classList.add('online');
             $div.classList.remove('offline');
         }else {
@@ -23,7 +23,7 @@ export function detectionConnection() {
         }, 1500);
     };
 
-    w.addEventListener('online', (e) => isOnline() );
+    w.addEventListener('online', () => isOnline() );
     
-    w.addEventListener('offline', (e) => isOnline() );
+    w.addEventListener('offline', () => isOnline() );
 }

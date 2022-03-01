@@ -11,6 +11,7 @@ import { detectionConnection } from "./deteccion_conexion.js";
 import { webCam } from "./deteccion_webcam.js";
 import { getGeolocation } from "./deteccion_geolocalizacion.js";
 import { filterSearch } from "./filtros_busqueda.js";
+import { lottery } from "./sorteo.js";
 
 const d = document;
 
@@ -33,6 +34,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
     getGeolocation('geolocation');
     
     filterSearch('.card-filter', '.card');
+
+    lottery('.lottery-item', '#lottery-btn');
 });
 
 

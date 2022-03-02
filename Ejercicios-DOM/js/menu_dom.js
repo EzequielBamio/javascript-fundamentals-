@@ -12,6 +12,7 @@ import { webCam } from "./deteccion_webcam.js";
 import { getGeolocation } from "./deteccion_geolocalizacion.js";
 import { filterSearch } from "./filtros_busqueda.js";
 import { lottery } from "./sorteo.js";
+import { slider } from "./carrusel.js";
 
 const d = document;
 
@@ -36,6 +37,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
     filterSearch('.card-filter', '.card');
 
     lottery('.lottery-item', '#lottery-btn');
+
+    slider();
 });
 
 

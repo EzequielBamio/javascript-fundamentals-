@@ -13,6 +13,7 @@ import { getGeolocation } from "./deteccion_geolocalizacion.js";
 import { filterSearch } from "./filtros_busqueda.js";
 import { lottery } from "./sorteo.js";
 import { slider } from "./carrusel.js";
+import { scrollSpy } from "./scroll_spy.js";
 
 const d = document;
 
@@ -39,6 +40,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
     lottery('.lottery-item', '#lottery-btn');
 
     slider();
+
+    scrollSpy();
 });
 
 

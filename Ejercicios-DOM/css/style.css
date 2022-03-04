@@ -75,6 +75,7 @@ img {
     position: fixed;
     z-index: 990;
     overflow-y: auto;
+    overflow-x: hidden;
     top: 0;
     bottom: 0;
     left: 0;
@@ -161,7 +162,7 @@ img {
     width: 4rem;
     height: 4rem;
     font-size: 2rem;
-    bottom: 1vw;
+    bottom: 1vh;
     right: calc(4.25rem + 1vw);
     font-weight: bold;
     cursor: pointer;
@@ -326,3 +327,104 @@ img {
 .slider a:hover {
     color: #4d4d4d;
 }
+
+/* ScrollSpy */
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: 
+            'header header'
+            'main   panel';
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .panel {
+        grid-area: panel;
+        position: sticky;
+        top: 4rem;
+        visibility: visible;
+        transform: translate(0, 0);
+        background-color: var(--color-second);
+        justify-content: flex-start;
+        align-self: start;
+    }
+
+    .panel-btn {
+        display: none;
+    }
+
+    .menu {
+        justify-content: start;
+        text-align: right;
+    }
+
+    .menu a {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+        color: var(--color-second);
+        background-color: var(--color-primary);
+    }
+
+    .scroll-top-btn {
+        right: initial;
+        left: calc(4.25rem + 1vw);
+    }
+}
+
+
+
+
+/* @media screen and (min-width: 1024px) {
+    .panel {
+        width: 25%;
+        transform: translate(0, 0);
+        visibility: visible;
+        top: 4.3rem;
+        bottom: 0;
+        left: auto;
+        right: 0;
+    }
+    
+    main {
+        width: 75%;
+    }
+
+    .panel-btn {
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .scroll-top-btn {
+        right: 0;
+        left: 7vw;
+    }
+    
+    .menu {
+        width: 100%;
+        text-align: end;
+    }
+    
+    .menu a {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+.scroll-active {
+    background-color: var(--color-primary);
+    color: var(--color-second);
+} */

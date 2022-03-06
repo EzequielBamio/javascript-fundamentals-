@@ -14,6 +14,7 @@ import { filterSearch } from "./filtros_busqueda.js";
 import { lottery } from "./sorteo.js";
 import { slider } from "./carrusel.js";
 import { scrollSpy } from "./scroll_spy.js";
+import { videoSmart } from "./video_inteligente.js";
 
 const d = document;
 
@@ -42,6 +43,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
     slider();
 
     scrollSpy();
+    
+    videoSmart();
 });
 
 

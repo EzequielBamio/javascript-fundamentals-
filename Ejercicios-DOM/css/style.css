@@ -428,3 +428,83 @@ img {
     background-color: var(--color-primary);
     color: var(--color-second);
 } */
+
+/* Formulario */
+
+.form-contact {
+    --form-ok-color: #4caf50;
+    --form-error-color: #f44336;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.form-contact > * {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+}
+
+.form-contact textarea {
+    resize: none;
+}
+
+.form-contact legend,
+.form-contact-response {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-contact input,
+.form-contact textarea {
+    font-family: sans-serif;
+}
+
+.form-contact input[type='submit'] {
+    cursor: pointer;
+    font-weight: bold;
+    width: 50%;
+}
+
+.form-contact *::placeholder {
+    color: #000;
+}
+
+.form-contact [required]:valid {
+    border: thin solid var(--form-ok-color);
+}
+
+.form-contact [required]:invalid {
+    border: thin solid var(--form-error-color);
+}
+
+.form-contact-error {
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--form-error-color);
+    color: #fff;
+    transform: all 800ms ease;
+}
+
+.form-contact-error.is-active {
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes show-message {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}

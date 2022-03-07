@@ -15,6 +15,7 @@ import { lottery } from "./sorteo.js";
 import { slider } from "./carrusel.js";
 import { scrollSpy } from "./scroll_spy.js";
 import { videoSmart } from "./video_inteligente.js";
+import { formContactValidation } from "./formulario-contacto.js";
 
 const d = document;
 
@@ -45,6 +46,9 @@ d.addEventListener('DOMContentLoaded', (e) => {
     scrollSpy();
     
     videoSmart();
+
+    formContactValidation();
+
 });
 
 

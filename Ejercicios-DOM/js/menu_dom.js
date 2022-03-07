@@ -23,7 +23,7 @@ d.addEventListener('DOMContentLoaded', (e) => {
     hamburgerMenu('.panel-btn', '.panel', '.menu a');
     digitalClock('#reloj', '#reloj-activar', '#reloj-desactivar');
     alarm('./assets/alarma.mp3', '#alarma-activar', '#alarma-desactivar');
-    countdown('countdown', 'Apr 14, 2022 08:30:00', 'Feliz Cumpleaño, Ezequiel Bamio!');
+    countdown('countdown', 'Apr 14, 2022 00:00:00', 'Feliz Cumpleaño, Ezequiel Bamio!');
     scrollUp('.scroll-top-btn');
     
     resposiveMedia('youtube', '(min-width: 1024px)', '<a href="https://www.youtube.com/watch?v=qJYBZDmtzLk" rel="noopener" target="_blank">Ver Video</a>', '<iframe width="560" height="315" src="https://www.youtube.com/embed/qJYBZDmtzLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');

@@ -2,7 +2,8 @@ const d = document;
 
 export function formContactValidation() {
     const $formContact = d.querySelector('.form-contact'),
-          $input = d.querySelectorAll('.form-contact [required]');
+          $input = d.querySelectorAll('.form-contact [required]'),
+          $btnFormContact = d.querySelector('.form-contact [type="submit"]');
 
     $input.forEach( (input) => {
         const $span = d.createElement('span');
@@ -33,6 +34,25 @@ export function formContactValidation() {
         }
     });
 
+    d.addEventListener('submit', (e) => {
+        // e.preventDefault();
 
+        const $loader = d.querySelector('.form-contact-loader'),
+              $response = d.querySelector('.form-contact-response');
+
+        $loader.classList.remove('none');
+
+        setTimeout(() => {
+            $loader.classList.add('none');
+            $response.classList.remove('none');
+            $formContact.reset();
+
+            setTimeout(() => {
+                $response.classList.add('none');
+            }, 3000);
+
+        }, 3000);
+
+    })
 
 }

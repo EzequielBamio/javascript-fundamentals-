@@ -30,7 +30,7 @@
             $xhr.innerHTML = `Error <b>${xhr.status}</b>: ${message}`
         }
 
-        console.log('Este mensaje se va a ejecutar de todas formas.');
+        // console.log('Este mensaje se va a ejecutar de todas formas.');
     });
 
     // xhr.open('GET', 'https://jsonplaceholder.typicode.com/user');
@@ -39,6 +39,42 @@
 
 
     xhr.send();
+
+
+})();
+
+( () => {
+
+    const $fetch = document.getElementById('fetch'),
+    $fragment = document.createDocumentFragment();
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+    //  .then( (res) => {
+    //     console.log(res);
+    //     // json - blod - text
+    //     return res.ok ? res.json() : Promise.reject();
+    //  })
+     .then( (res) => res.ok ? res.json() : Promise.reject(res) )
+     .then( (json) => {
+        // console.log(json);
+        // $fetch.innerHTML = json;
+        json.forEach( (el) => {
+            const $li = document.createElement('li');
+            $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`;
+            $fragment.appendChild($li);
+        });
+
+        $fetch.appendChild($fragment);
+     })
+     .catch( (err) => {
+        // console.log('Catch', err);
+        let message = err.statusText || 'Ocurrio un error';
+            $fetch.innerHTML = `Error <b>${err.status}</b>:  ${message}`;
+     })
+     .finally( () => {
+        console.log('Esto se ejecutara independientemente del resultado de la Promesa Fetch');
+     });
+
 
 
 })();

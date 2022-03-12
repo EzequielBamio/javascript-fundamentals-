@@ -1,0 +1,52 @@
+{
+    "playerArg": [
+        {
+            "id": 1,
+            "name": "Lionel Messi",
+            "number": "30"
+        },
+        {
+            "id": 2,
+            "name": "Leandro Paredes",
+            "number": "8"
+        },
+        {
+            "id": 3,
+            "name": "Fernando Gago",
+            "number": "5"
+        },
+        {
+            "id": 4,
+            "name": "Juan Roman Riquelme",
+            "number": "10"
+        }
+    ],
+
+    "playerEsp": [
+        {
+            "id": 1,
+            "name": "Andres Iniesta",
+            "number": "8"
+        },
+        {
+            "id": 2,
+            "name": "Xavi Hernandez",
+            "number": "6"
+        },
+        {
+            "id": 3,
+            "name": "Pedri",
+            "number": "16"
+        },
+        {
+            "id": 4,
+            "name": "Sergio Busquets",
+            "number": "5"
+        },
+        {
+            "id": 5,
+            "name": "Jordi Alba",
+            "number": "18"
+        }
+    ]
+}

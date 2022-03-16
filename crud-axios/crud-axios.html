@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD API REST AXIOS</title>
+    
 </head>
 <body>
     <h1>CRUD API REST AXIOS</h1>
@@ -35,18 +36,19 @@
         </article>
     </section>
 
-    <template class="curd-template">
+    <template class="crud-template">
         <tr>
             <td class="name"></td>
             <td class="number"></td>
             <td>
-                <button class="update">Editar</button>
+                <button class="edit">Editar</button>
                 <button class="delete">Eliminar</button>
             </td>
         </tr>
     </template>
 
-    <script src="./js/crud-ajax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/crud-axios.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,28 @@
+{
+    "pages": [
+        {
+            "id": "home",
+            "title": "Contenido del Home",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam mollitia, atque harum molestias tenetur vero? Reprehenderit assumenda fuga, expedita incidunt optio rerum eius quibusdam dolores architecto veritatis iste recusandae.",
+            "img": "https://placeimg.com/200/200/animals"
+        },
+        {
+            "id": "acerca",
+            "title": "Contenido de Acerca",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam mollitia, atque harum molestias tenetur vero? Reprehenderit assumenda fuga, expedita incidunt optio rerum eius quibusdam dolores architecto veritatis iste recusandae.",
+            "img": "https://placeimg.com/200/200/people"
+        },
+        {
+            "id": "servicios",
+            "title": "Contenido de Servicios",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam mollitia, atque harum molestias tenetur vero? Reprehenderit assumenda fuga, expedita incidunt optio rerum eius quibusdam dolores architecto veritatis iste recusandae.",
+            "img": "https://placeimg.com/200/200/arch"
+        },
+        {
+            "id": "contacto",
+            "title": "Contenido de Contacto",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam mollitia, atque harum molestias tenetur vero? Reprehenderit assumenda fuga, expedita incidunt optio rerum eius quibusdam dolores architecto veritatis iste recusandae.",
+            "img": "https://placeimg.com/200/200/nature"
+        }
+    ]
+}

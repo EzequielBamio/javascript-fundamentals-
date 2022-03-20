@@ -69,3 +69,14 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* Uploader */
+
+.uploader-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}

@@ -1,5 +1,6 @@
 const d = document,
-      $main = d.querySelector('main');
+      $main = d.querySelector('main'),
+      $header = d.querySelector('.header');
 
 const getHTML = (options) => {
     let { url, success, error } = options;
@@ -24,7 +25,7 @@ const getHTML = (options) => {
 };  
 
 d.addEventListener('DOMContentLoaded', (e) => {
-    
+
     getHTML({
         url: './assets/home.html',
         success: (html) => $main.innerHTML = html,

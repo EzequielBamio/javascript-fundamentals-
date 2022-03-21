@@ -16,7 +16,8 @@ const uploader = (file) => {
         if(xhr.readyState !== 4) { return; }
 
         if(xhr.status >= 200 && xhr.status < 300) {
-            console.log(xhr.responseText);
+            let json = JSON.parse(xhr.responseText);
+            // console.log(json);
 
 
         } else {
@@ -32,12 +33,44 @@ const uploader = (file) => {
 
 };
 
+const progressUpload = (file) => {
+    const $progress = d.createElement('progress'),
+          $span = d.createElement('span'),
+          fileReader = new FileReader();
+
+    $progress.value = 0;
+    $progress.max = 100;
+
+    $main.insertAdjacentElement('beforeend', $progress);
+    $main.insertAdjacentElement('beforeend', $span);
+
+    fileReader.readAsDataURL(file);
+
+    fileReader.addEventListener('progress', (e) => {
+        console.log(e);
+
+        let progress = parseInt(e.loaded * 100 / e.total);
+        $progress.value = progress;
+        $span.innerHTML = `<b>${file.name} - ${progress}%</b>`;
+    });
+
+    fileReader.addEventListener('loadend', (e) => {
+        uploader(file);
+        setTimeout(() => {
+            $main.removeChild($progress);
+            $main.removeChild($span);
+            $files.value = '';
+        }, 3000);
+    });
+
+
+};
+
 d.addEventListener('change', (e) => {
 
     if(e.target === $files) {
         const files = Array.from(e.target.files);
-
-        files.forEach( (el) => uploader(el) );
+        files.forEach( (el) => progressUpload(el) );
     }
 
 });

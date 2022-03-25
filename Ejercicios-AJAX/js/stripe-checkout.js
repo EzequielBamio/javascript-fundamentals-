@@ -12,6 +12,9 @@ const d = document,
 
 let products, prices;
 
+const moneyFormat = (num) => `${num.slice(0, -2)}.${num.slice(-2)}`;
+
+
 Promise.all([
     fetch('https://api.stripe.com/v1/products', fetchOptions),
     fetch('https://api.stripe.com/v1/prices', fetchOptions)
@@ -23,7 +26,7 @@ Promise.all([
 
     prices.forEach( (el) => {
         let productData = products.filter( (p) => p.id === el.product );
-        console.log(productData);
+        // console.log(productData);
 
         $template.querySelector('.camiseta').setAttribute('data-price', el.id);
         $template.querySelector('img').src = productData[0].images[0];
@@ -31,7 +34,7 @@ Promise.all([
         $template.querySelector('figcaption').innerHTML = `
          ${productData[0].name}
          <br>
-         $${el.unit_amount_decimal / 100} ${el.currency}
+         $${moneyFormat(el.unit_amount_decimal)} ${el.currency}
         `;
         let $clone = d.importNode($template, true);
         $fragment.appendChild($clone);
@@ -45,7 +48,28 @@ Promise.all([
     $tShirts.innerHTML = `<p>Error ${err.status}: ${message}</p>`
   })
 
+d.addEventListener('click', (e) => {
 
+  if(e.target.matches('.camiseta *')) {
+    let priceId = e.target.parentElement.getAttribute('data-price');
+    Stripe(STRIPE_KEYS.public).redirectToCheckout({
+      lineItems: [{ 
+        price: priceId,
+        quantity: 1
+      }],
+      mode: 'subscription',
+      successUrl: 'http://127.0.0.1:5500/Ejercicios-AJAX/assets/stripe-success.html',
+      cancelUrl: 'http://127.0.0.1:5500/Ejercicios-AJAX/assets/stripe-cancel.html',
+
+    }).then( (res) => {
+      if(res.error) {
+        $tShirts.insertAdjacentElement('afterend', res.error.message);
+      }
+    })
+
+  }
+
+});
 
 
 

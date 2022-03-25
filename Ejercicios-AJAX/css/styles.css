@@ -198,3 +198,39 @@ progress {
         opacity: 1;
     }
 }
+
+/* Stripe */
+
+.camisetas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.camisetas > * {
+    flex: 1 1 300px;
+    margin: 1rem;
+}
+
+.camiseta {
+    background-color: crimson;
+    color: white;
+    font-size: 125%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.camiseta:hover {
+    opacity: .9;
+    transform: scale(.9);
+}
+
+.camiseta img {
+    max-width: 100%;
+    height: auto;
+}
+
+.camiseta figcaption {
+    padding: 1rem;
+}
+

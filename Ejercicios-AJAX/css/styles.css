@@ -234,3 +234,9 @@ progress {
     padding: 1rem;
 }
 
+/* Pokemons */
+
+.loader {
+    display: block;
+    margin: auto;
+}
